@@ -10,19 +10,6 @@
     chosen {
         zmk,kscan = &kscan0;
     };
-    
-    // kscan0: kscan {
-    //     compatible = "zmk,kscan-gpio-direct";
-    //     wakeup-source;
-    //     input-gpios
-    //         = <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    //         , <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    //         , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    //         , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-    //         ;
-    // };
-
-
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
@@ -49,8 +36,8 @@
 
     Main_encoder: encoder_top {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <80>;
         status = "okay";
     };
