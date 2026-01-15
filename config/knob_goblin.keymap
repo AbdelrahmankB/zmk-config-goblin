@@ -15,7 +15,7 @@
         default_layer {
 
             bindings = <
-    &kp C_PLAY &kp C__PAUSE 
+    &kp C_PLAY &kp C__PAUSE
     &kp C_MUTE
     &kp LEFT_ARROW &kp RIGHT_ARROW
 >;
