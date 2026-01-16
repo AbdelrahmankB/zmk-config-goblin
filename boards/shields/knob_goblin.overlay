@@ -9,38 +9,31 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,sensors = &sensors;
-
+        // zmk,sensors = &sensors;
     };
     
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
-        debounce-press-ms = <10>;
-        debounce-release-ms = <10>;
-        input-gpios
-            = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            ;
+        label = "KSCAN";
+
+        input-gpios =
+            <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* TEST PIN */
     };
 
     
 
-    Main_encoder: encoder_top {
-        compatible = "alps,ec11";
-        wakeup-source;
-        a-gpios = <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay";
-    };
+    // Main_encoder: encoder_top {
+    //     compatible = "alps,ec11";
+    //     wakeup-source;
+    //     a-gpios = <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    //     b-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    //     steps = <80>;
+    //     status = "okay";
+    // };
 
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&Main_encoder>;
-        triggers-per-rotation = <1>;
-    };
+    // sensors: sensors {
+    //     compatible = "zmk,keymap-sensors";
+    //     sensors = <&Main_encoder>;
+    //     triggers-per-rotation = <1>;
+    // };
 };

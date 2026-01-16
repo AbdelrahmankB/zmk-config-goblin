@@ -13,13 +13,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layers {
-            layer0 {
-                bindings = <
-                    &kp A &kp B &kp C &kp D &kp E
-                >;
-                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            };
+        default_layer {
+            bindings = < &kp ESC >;
         };
     };
 };
