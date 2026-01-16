@@ -18,11 +18,11 @@
         debounce-press-ms = <10>;
         debounce-release-ms = <10>;
         input-gpios =
-            <&gpio0 8  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D2 */
-            <&gpio0 6  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D3 */
-            <&gpio0 4  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D4 */
-            <&gpio0 3  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,  /* D5 */
-            <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  /* D7 */
+            <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&pro_micro  3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&pro_micro  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&pro_micro  5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
     Main_encoder: encoder_top {
@@ -37,6 +37,6 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&Main_encoder>;
-        triggers-per-rotation = <20>;
+        triggers-per-rotation = <1>;
     };
 };
