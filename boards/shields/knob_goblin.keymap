@@ -8,32 +8,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-                &kp ESC
-                &kp ESC
-                &kp ESC
-                &kp ESC
-                &kp ESC
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        layers {
+            layer0 {
+                bindings = <
+                    &kp A &kp B &kp C &kp D &kp E
+                >;
+                sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
         };
-
-        layer_1 {
-            bindings = <
-                &kp ESC
-                &kp ESC
-                &kp ESC
-                &kp ESC
-                &kp ESC
-            >;
-            sensor-bindings = <&inc_dec_kp SCROLL_UP SCROLL_DOWN>;
-        };
-
     };
 };
-
