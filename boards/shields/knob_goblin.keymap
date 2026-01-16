@@ -14,7 +14,13 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = < &kp ESC >;
+            bindings = <
+                &kp ESC
+                &kp ESC
+                &kp ESC
+                &kp ESC
+                &kp ESC
+            >;
         };
     };
 };
